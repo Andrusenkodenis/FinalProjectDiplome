@@ -1,5 +1,4 @@
 ## Дипломный проект: Автотесты для https://intershop5.skillbox.ru/
-
 ---
 
 Репозиторий содержит финальный проект с автотестами на Java + Selenium + WebDriver + JUnit + Maven.
