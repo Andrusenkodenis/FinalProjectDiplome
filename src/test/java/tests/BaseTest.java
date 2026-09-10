@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CatalogPage;
+import pages.RegistrationPage;
 
 import java.time.Duration;
 
@@ -30,6 +31,12 @@ public class BaseTest {
         catalog.openCatalogFromMenu();
         catalog.addProductToCart();
         catalog.clickDetailsButton();
+    }
+
+    protected void ensureTestUserExists(String username, String email, String password) {
+        driver.get("https://intershop5.skillbox.ru/register/");
+        RegistrationPage registrationPage = new RegistrationPage(driver, wait);
+        registrationPage.tryRegister(username, email, password);
     }
 
     @After

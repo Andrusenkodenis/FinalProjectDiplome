@@ -13,9 +13,11 @@ public class AuthorizationTests extends BaseTest {
 
     private static final String USERNAME = "Hirosaki234";
     private static final String PASSWORD = "3lfk3fm3eg";
+    private static final String EMAIL = "hirosaki234@mail.ru";
 
     @Before
     public void openPage() {
+        ensureTestUserExists(USERNAME, EMAIL, PASSWORD);
         driver.get("https://intershop5.skillbox.ru/my-account/");
         loginPage = new LoginPage(driver, wait);
     }

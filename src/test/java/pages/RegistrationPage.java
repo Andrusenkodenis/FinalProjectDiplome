@@ -57,4 +57,10 @@ public class RegistrationPage {
             return false;
         }
     }
+
+    public boolean tryRegister(String username, String email, String password) {
+        register(username, email, password);
+        return !isErrorDisplayed();
+    }
+
 }

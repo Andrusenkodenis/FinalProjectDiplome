@@ -10,6 +10,7 @@ public class CheckoutTest extends BaseTest {
 
     private static final String USERNAME = "Hirosaki234";
     private static final String PASSWORD = "3lfk3fm3eg";
+    private static final String EMAIL = "hirosaki234@mail.ru";
 
     @Test
     public void userCanOpenCheckoutPage() {
@@ -22,6 +23,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void userCanFillCheckoutInformation() {
+        ensureTestUserExists(USERNAME, EMAIL, PASSWORD);
         LoginPage loginPage = new LoginPage(driver, wait);
         CheckoutPage checkout = new CheckoutPage(driver, wait);
         driver.get("https://intershop5.skillbox.ru/my-account/");
@@ -44,6 +46,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void userCanPlaceOrderWithCashPayment() {
+        ensureTestUserExists(USERNAME, EMAIL, PASSWORD);
         LoginPage loginPage = new LoginPage(driver, wait);
         CheckoutPage checkout = new CheckoutPage(driver, wait);
         driver.get("https://intershop5.skillbox.ru/my-account/");
