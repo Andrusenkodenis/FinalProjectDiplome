@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -53,7 +54,7 @@ public class RegistrationPage {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
             return true;
-        } catch (Exception e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }

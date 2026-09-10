@@ -47,4 +47,12 @@ public class CatalogTest extends BaseTest {
         assertTrue(cart.isOpened());
         assertTrue(cart.hasProducts());
     }
+
+    @Test
+    public void userCanOpenSecondPageOfCatalog() {
+        CatalogPage catalog = new CatalogPage(driver, wait);
+        catalog.open();
+        catalog.openSecondPage();
+        assertTrue(driver.getCurrentUrl().contains("page"));
+    }
 }

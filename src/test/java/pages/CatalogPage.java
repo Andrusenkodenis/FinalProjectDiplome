@@ -55,17 +55,11 @@ public class CatalogPage {
 
     }
 
-    public int getCategoriesCount() {
-        return driver.findElements(categories).size();
-    }
-
-    public void openFirstCategory() {
-        driver.findElements(categories).get(0).click();
-
-    }
-
     public void openSecondPage() {
         List<WebElement> pages = driver.findElements(paginationLinks);
+        if (pages.size() < 2) {
+            throw new RuntimeException("Недостаточно страниц пагинации для перехода на вторую страницу");
+        }
         pages.get(1).click();
     }
 

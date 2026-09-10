@@ -14,6 +14,7 @@ public class HomePageTests extends BaseTest {
 
     private static final String USERNAME = "Hirosaki234";
     private static final String PASSWORD = "3lfk3fm3eg";
+    private static final String EMAIL = "hirosaki234@mail.ru";
 
     @Before
     public void openHomePage() {
@@ -26,6 +27,8 @@ public class HomePageTests extends BaseTest {
 
     @Test
     public void accountPageShouldOpen() {
+        ensureTestUserExists(USERNAME, EMAIL, PASSWORD);
+        homePage.open();
         homePage.openAccount();
         loginPage = new LoginPage(driver, wait);
         loginPage.login(USERNAME, PASSWORD);

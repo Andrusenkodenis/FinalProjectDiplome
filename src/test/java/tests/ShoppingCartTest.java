@@ -33,6 +33,6 @@ public class ShoppingCartTest extends BaseTest {
         addAnyProductToCart();
         assertTrue(cart.isOpened());
         cart.applyCoupon("sert500");
+        assertTrue("Купон не был применён", cart.isCouponApplied());
     }
-
 }
