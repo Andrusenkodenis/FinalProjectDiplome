@@ -46,5 +46,9 @@
 - Система сборки: Maven
 - Архитектура: Page Object Model
 
+## Клонирование репозитория
+- git clone https://github.com/Andrusenkodenis/FinalProjectDiplome.git 
+- cd FinalProjectDiplome
+
 ## Запуск тестов
 mvn clean test
