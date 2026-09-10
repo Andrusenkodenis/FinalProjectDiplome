@@ -1,8 +1,6 @@
 package tests;
 
 import org.junit.Test;
-import pages.CatalogPage;
-import pages.CartPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
 
@@ -15,13 +13,8 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void userCanOpenCheckoutPage() {
-        CatalogPage catalog = new CatalogPage(driver, wait);
-        CartPage cart = new CartPage(driver, wait);
         CheckoutPage checkout = new CheckoutPage(driver, wait);
-        catalog.openHomePage();
-        catalog.openCatalogFromMenu();
-        catalog.addProductToCart();
-        catalog.clickDetailsButton();
+        addAnyProductToCart();
         checkout.openCheckoutPage();
         assertTrue(checkout.isOpened());
         assertTrue(checkout.isCheckoutTitleDisplayed());
@@ -30,14 +23,10 @@ public class CheckoutTest extends BaseTest {
     @Test
     public void userCanFillCheckoutInformation() {
         LoginPage loginPage = new LoginPage(driver, wait);
-        CatalogPage catalog = new CatalogPage(driver, wait);
         CheckoutPage checkout = new CheckoutPage(driver, wait);
         driver.get("https://intershop5.skillbox.ru/my-account/");
         loginPage.login(USERNAME, PASSWORD);
-        catalog.openHomePage();
-        catalog.openCatalogFromMenu();
-        catalog.addProductToCart();
-        catalog.clickDetailsButton();
+        addAnyProductToCart();
         checkout.openCheckoutPage();
         checkout.fillCustomerInformation(
                 "Иван",
@@ -56,14 +45,10 @@ public class CheckoutTest extends BaseTest {
     @Test
     public void userCanPlaceOrderWithCashPayment() {
         LoginPage loginPage = new LoginPage(driver, wait);
-        CatalogPage catalog = new CatalogPage(driver, wait);
         CheckoutPage checkout = new CheckoutPage(driver, wait);
         driver.get("https://intershop5.skillbox.ru/my-account/");
         loginPage.login(USERNAME, PASSWORD);
-        catalog.openHomePage();
-        catalog.openCatalogFromMenu();
-        catalog.addProductToCart();
-        catalog.clickDetailsButton();
+        addAnyProductToCart();
         checkout.openCheckoutPage();
         checkout.fillCustomerInformation(
                 "Иван",

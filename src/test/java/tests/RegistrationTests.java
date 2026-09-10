@@ -20,7 +20,14 @@ public class RegistrationTests extends BaseTest {
 
     @Test
     public void successfulRegistrationNewUser() {
-        registrationPage.register("Hirosaki234", "hiro4@mail.ru", "3lfk3fm3eg");
+
+        String random = String.valueOf(System.currentTimeMillis() % 100000000);
+
+        String uniqueUsername = "user_" + random;
+        String uniqueEmail = random + "@mail.ru";
+        String uniquePassword = "Pass" + random;
+
+        registrationPage.register(uniqueUsername, uniqueEmail, uniquePassword);
         assertFalse("Появилась ошибка регистрации", registrationPage.isErrorDisplayed());
     }
 

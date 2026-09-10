@@ -42,12 +42,8 @@ public class CatalogTest extends BaseTest {
 
     @Test
     public void userCanAddWashingMachineToCartAndCheckProduct() {
-        CatalogPage catalog = new CatalogPage(driver, wait);
         CartPage cart = new CartPage(driver, wait);
-        catalog.openHomePage();
-        catalog.openCatalogFromMenu();
-        catalog.addProductToCart();
-        catalog.clickDetailsButton();
+        addAnyProductToCart();
         assertTrue(cart.isOpened());
         assertTrue(cart.hasProducts());
     }
