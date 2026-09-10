@@ -15,7 +15,7 @@
 ## Стек и зависимости:
 - Java 17
 - Selenium WebDriver 4
-- JUnit 5
+- JUnit 4
 - Maven
 - WebDriverManager (автоматическая загрузка ChromeDriver)
 
