@@ -1,6 +1,6 @@
 ## Проект: Автотесты для https://intershop5.skillbox.ru/
 
-Репозиторий содержит финальный проект с автотестами на Java + Selenium + WebDriver + JUnit + Maven.
+Репозиторий содержит финальный проект с автотестами на Java + Selenium + WebDriverManager + JUnit 4 + Maven.
 Тесты проверяют ключевые пользовательские сценарии на демо‑сайте интернет-магазина.
 
 - регистрация нового пользователя;
@@ -14,10 +14,9 @@
 
 ## Стек и зависимости:
 - Java 17
-- Selenium WebDriver 4
+- WebDriverManager
 - JUnit 4
 - Maven
-- WebDriverManager (автоматическая загрузка ChromeDriver)
 
 ## Структура проекта:
 - FinalProjectDiplome/
@@ -40,17 +39,12 @@
     - ShoppingCartTest.java - проверка добавление товара в корзину, изменение количества товара и удаление товара
     - CheckoutTest.java - проверка пользовательского сценария: оформление заказа от корзины до подтверждение покупки
    
-Ключевые тесты:
-- AuthorizationTests.java — проверка авторизации пользователя
-- RegistrationTests.java — регистрация нового пользователя
-- CatalogTest.java — работа каталога товаров
-- ShoppingCartTest.java — добавление и удаление товаров из корзины
-- CheckoutTest.java — полный сценарий оформления заказа
-- HomePageTests.java — проверка элементов главной страницы
-
 ## Настройки проекта:
 - URL тестируемого сайта: https://intershop5.skillbox.ru/
-- Браузер: Google Chrome
-- Фреймворк: Selenium WebDriver
+- IntelliJ IDEA 
+- Фреймворк: WebDriverManager
 - Система сборки: Maven
 - Архитектура: Page Object Model
+
+## Запуск тестов
+mvn clean test
